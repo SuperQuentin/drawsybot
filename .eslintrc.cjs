@@ -4,12 +4,15 @@ const config = {
     {
       extends: [
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:@remotion/recommended",
       ],
-      files: ["*.ts", "*.tsx", "src/remotion/*.{ts,tsx}"],
+      files: ["*.ts", "*.tsx"],
       parserOptions: {
         project: "tsconfig.json",
       },
+    },
+    {
+      extends: ["plugin:@remotion/recommended"],
+      files: ["src/remotion/*.{ts,tsx}"],
     },
   ],
   parser: "@typescript-eslint/parser",
