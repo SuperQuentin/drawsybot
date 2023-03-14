@@ -1,12 +1,28 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 
+import { Player } from "@remotion/player";
+import { WelcomeComposition } from "~/remotion/Composition";
+
 import { api } from "~/utils/api";
 import { type NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <div>test</div>
+      <div>
+        <Player
+          component={WelcomeComposition}
+          durationInFrames={120}
+          compositionWidth={1080}
+          compositionHeight={1080}
+          style={{
+            width: 512,
+            height: 512,
+          }}
+          controls
+          fps={30}
+        />
+      </div>
     </>
   );
 };
